@@ -1,2 +1,2 @@
-dir /b /s *.java >> sourcefiles.txt
+dir /b /s *.java > sourcefiles.txt
 javac @sourcefiles.txt
