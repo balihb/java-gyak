@@ -10,6 +10,8 @@ class Het {
 
             System.out.println("a + b = " + a + b);
             System.out.println("a + b = " + (a + b));
+
+
             System.out.println("a - b = " + (a - b));
             System.out.println("a * b = " + (a * b));
             if (b != 0) {
