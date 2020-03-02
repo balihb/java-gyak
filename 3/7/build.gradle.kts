@@ -1,3 +1,3 @@
-application  {
+application {
     mainClassName = "main.Main"
 }

@@ -7,7 +7,7 @@ public class Main {
         Point point = new Point();
         PointImmutable imuPoint = new PointImmutable();
 
-        Point2D jfxPoint = new Point2D(0,0);
+        Point2D jfxPoint = new Point2D(0, 0);
 
         System.out.println(jfxPoint);
         System.out.println(point);

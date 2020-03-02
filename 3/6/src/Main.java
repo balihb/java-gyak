@@ -18,6 +18,12 @@ public class Main {
             iterLetter.printNext();
         }
 
+        iterLetter.printNext();
+
+        while (iterLetter.hasNext()) {
+            iterLetter.printNext();
+        }
+
         iterLetter.restart();
 
         while (iterLetter.hasNext()) {

@@ -5,7 +5,7 @@ public class IterLetter {
     private int position = 0;
 
     public IterLetter(String str) {
-        if(str == null) {
+        if (str == null) {
             this.str = "";
         } else {
             this.str = str;
