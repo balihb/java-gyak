@@ -1,7 +1,7 @@
 sourcefiles.txt
 
-# Created by https://www.gitignore.io/api/java,emacs,gradle,intellij
-# Edit at https://www.gitignore.io/?templates=java,emacs,gradle,intellij
+# Created by https://www.gitignore.io/api/java,emacs,gradle,intellij,notepadpp
+# Edit at https://www.gitignore.io/?templates=java,emacs,gradle,intellij,notepadpp
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
@@ -167,6 +167,10 @@ fabric.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+### NotepadPP ###
+# Notepad++ backups #
+*.bak
+
 ### Gradle ###
 .gradle
 build/
@@ -186,4 +190,4 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
-# End of https://www.gitignore.io/api/java,emacs,gradle,intellij
+# End of https://www.gitignore.io/api/java,emacs,gradle,intellij,notepadpp
