@@ -1,0 +1,3 @@
+application  {
+    mainClassName = "main.Main"
+}

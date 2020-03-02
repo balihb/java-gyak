@@ -11,3 +11,8 @@ https://github.com/richard-koch-gomori/teaching-elte-ik-Programming-languages-Ja
 ## Láthatóság
 
 https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html
+
+## Elnevezési konvenciók
+
+https://www.oracle.com/technetwork/articles/javaee/codeconventions-135099.html
+
