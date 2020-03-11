@@ -8,7 +8,7 @@ public class Foo {
 
     public static final String BANAN = "Banan";
 
-    static public String getAlma() {
+    public static String getAlma() {
         return "get" + alma;
     }
 
