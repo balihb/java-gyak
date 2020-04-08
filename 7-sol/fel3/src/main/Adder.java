@@ -1,10 +1,11 @@
-package main;
-
 public class Adder
 {
     public static String add(final String s, final String s2) {
+        if(s == null || s2 == null) {
+            throw new IllegalArgumentException("One or both parameter was null");
+        }
         try {
-            return Integer.toString(Integer.parseInt(s) + Integer.parseInt(s2));
+            return Integer.toString(Integer.parseInt(s.trim()) + Integer.parseInt(s2.trim()));
         }
         catch (NumberFormatException ex) {
             try {

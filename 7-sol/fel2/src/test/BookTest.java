@@ -10,9 +10,13 @@ import static org.junit.Assert.fail;
 
 public class BookTest{
 
+   // Book b1tst;
+
     @Before
     public void setUp() {
         Book.resetId();
+
+        // b1tst = Book.make("abc", "def","SCIFI","10000")
     }
     @After
     public void tearDown() {
@@ -22,6 +26,7 @@ public class BookTest{
     @Test
     public void Book_setsParameters() {
         Book b1 = Book.make("abc", "def","SCIFI","10000");
+        // vagy előre létrehozva b1tst-ként
         Book b2 = Book.make("abc", "def","SCIFI","10000");
 
         assertEquals(b1.getReservePrice(), 10000);
