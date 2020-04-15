@@ -44,6 +44,13 @@ public class UnmodifiableStringArrayTest {
         assertEquals("abc", sortedUsa[2]);
     }
 
+    @Test
+    public void sortArrayOnly_Test() {
+        String[] sortedUsa = usa.sortArrayOnly();
+        assertEquals("x", sortedUsa[usa.size()-1]);
+        assertEquals("abc", sortedUsa[2]);
+    }
+
     @Test 
     public void size_Adding_Test() {
         assertEquals(30, usa.allLength());

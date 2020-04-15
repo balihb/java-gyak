@@ -55,7 +55,7 @@ public class AdderTest {
   public void add_acceptsBinary(){
     int result = Integer.parseInt(Adder.add("0b01", "0b11"));
     
-    assertEquals(result, 5);
+    assertEquals(result, 4);
   }
 
   @Ignore

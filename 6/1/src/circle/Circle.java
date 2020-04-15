@@ -7,8 +7,7 @@ public class Circle {
     private double radius;
 
     public Circle(double x, double y, double radius) {
-        this.center = new Point(x, y);
-        this.radius = radius;
+        this(new Point(x, y), radius);
     }
 
     public Circle(Point point, double radius) {
