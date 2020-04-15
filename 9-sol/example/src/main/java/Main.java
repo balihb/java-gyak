@@ -19,6 +19,7 @@ public class Main {
 
         System.out.println(vasObj);
         System.out.println(korfureszObj2);
+        System.out.println(vasObj2);
 
         System.out.println((Vas) korfureszObj2);
 
@@ -29,6 +30,6 @@ public class Main {
         System.out.println(korfureszObj2.getAlma());
         System.out.println(korfureszObj2.getKorte());
 
-        // vasObj2.getAlma(); // nem működik, mert a referenciánk Vas típusú
+        // vasObj2.getKorte(); // nem működik, mert a referenciánk Vas típusú
     }
 }
