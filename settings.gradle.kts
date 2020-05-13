@@ -92,5 +92,8 @@ include("11:fel2")
 
 include("minta_zh")
 
+include("12")
+include("12:fel2")
+
 include("13")
 include("13:wallet-sol")
