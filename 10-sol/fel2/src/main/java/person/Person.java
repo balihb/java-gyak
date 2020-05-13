@@ -22,7 +22,7 @@ public class Person {
 
     @Override
     public boolean equals(Object that) {
-        if (that == this) retrun true;
+        if (that == this) return true;
         if (that == null) return false;
 
         if (that instanceof Person) {
