@@ -33,12 +33,17 @@ public class Wallet implements Comparable<Wallet> {
 
     @Override
     public int compareTo(Wallet otherWallet) {
-        if (equals(otherWallet)) {
+        if(equals(otherWallet)) {
             return 0;
-        } else if (getValue() > otherWallet.getValue()) {
+        }
+
+        Integer selfValue = getValue();
+        Integer otherValue = otherWallet.getValue();
+
+        if(selfValue.equals(otherValue)) {
+            return 0;
+        } else if(selfValue > otherValue) {
             return 1;
-        } else if (getValue().equals(otherWallet.getValue())) {
-            return 0;
         } else {
             return -1;
         }

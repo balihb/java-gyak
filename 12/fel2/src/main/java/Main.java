@@ -51,6 +51,11 @@ class ExtendedStringIterator implements Iterator<Character>
     public Character next()
     {
         return this.stringToIterate.charAt(this.counter++);
+        /*
+        int oldCounter = counter;
+        counter += 1;
+        return this.stringToIterate.charAt(oldCounter);
+         */
     }
 
     @Override
