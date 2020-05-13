@@ -3,6 +3,14 @@ public class Main {
         Kenokes enKenokesem = new Kenokes(10, true);
         Sefkes enSefkesem = new Sefkes(15, false);
 
+        Kes enKesem = new Kenokes(11, true);
+
+        enKesem.getPengeHossz();
+        enKesem.isReces();
+
+        // null lesz
+        Sefkes masikkes;
+
         AltalanosEvoeszkozTok<?> tokWildcardal = new AltalanosEvoeszkozTok<Kes>(enSefkesem);
         // tokWildcardal.getTarolt().getPengehossz();
 
