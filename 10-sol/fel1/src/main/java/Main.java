@@ -1,9 +1,7 @@
 import java.util.HashSet;
 
-class Main
-{
-    public static void main(String[] args)
-    {
+class Main {
+    public static void main(String[] args) {
         Vector vec23 = new Vector(2, 3);
         Vector vec24 = new Vector(2, 4);
 
@@ -23,7 +21,7 @@ class Main
         exampleSet.add(new Vector(0, 0));
         exampleSet.add(new Vector(3, -7));
         exampleSet.add(new Vector(3, -7));
-        System.out.println( "size of HashSet: " + exampleSet.size());
-        System.out.println( "items of HashSet: " + exampleSet);
+        System.out.println("size of HashSet: " + exampleSet.size());
+        System.out.println("items of HashSet: " + exampleSet);
     }
 }

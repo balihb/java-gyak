@@ -1,4 +1,4 @@
-public abstract class Kes extends Evoeszkoz{
+public abstract class Kes extends Evoeszkoz {
     private final int pengeHossz;
 
     public Kes(int pengeHossz) {

@@ -78,7 +78,6 @@ include("9-sol:fel4-c")
 
 include("10-sol")
 include("10-sol:fel1")
-/*
 include("10-sol:fel2")
 include("10-sol:fel3")
 include("10-sol:static_dynamic_type")
@@ -87,4 +86,11 @@ include("10-sol:extra")
 include("10-sol:extra:fel1")
 include("10-sol:extra:fel2")
 include("10-sol:example")
-*/
+
+include("11:fel1")
+include("11:fel2")
+
+include("minta_zh")
+
+include("13")
+include("13:wallet-sol")
