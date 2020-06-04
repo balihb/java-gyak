@@ -32,7 +32,7 @@ public class Person {
                     this.lastname.equals(thatPerson.lastname) &&
                     this.occup.equals(thatPerson.occup) &&
                     this.gen.equals(thatPerson.gen) &&
-                    birthYear == thatPerson.birthYear
+                    birthYear == thatPerson.birthYear;
         } else {
             return false;
         }
