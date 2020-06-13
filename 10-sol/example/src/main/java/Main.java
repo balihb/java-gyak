@@ -11,6 +11,9 @@ public class Main {
         enKesem.getPengeHossz();
         //enKesem.isReces();
 
+        // null lesz
+        Sefkes masikkes;
+
         AltalanosEvoeszkozTok<?> tokWildcardal = new AltalanosEvoeszkozTok<Kes>(enSefkesem);
         // tokWildcardal.getTarolt().getPengehossz();
 
