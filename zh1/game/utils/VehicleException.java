@@ -2,7 +2,6 @@ package game.utils;
 
 public class VehicleException extends Exception // 0.5 pont
 {
-
     /*
     itt lehetséges, de nem kötelező az üres konstruktort meghívni.
     ha nincs explicit definiálva super konstruktor, akkor mindig a paraméter nélküli hívódik meg a leszármazott

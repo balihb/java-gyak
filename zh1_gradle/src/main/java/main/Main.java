@@ -53,7 +53,9 @@ public class Main {
             try {
                 money = Integer.parseInt(data[1]);
             } catch (NumberFormatException e) {
-                // itt nem kell semmit sennünk, mert ha nem sikerül a parseInt, a money értéke nem változik
+                /*
+                 itt nem kell semmit sennünk, mert ha nem sikerül a parseInt, a money értéke nem változik
+                 */
             }
             /*
             ennek a megoldásnak az a problémája, hogy a try-catch költséges művelet és itt kettőt ágyazunk egymásba.

@@ -46,12 +46,16 @@ public class Player {
         /*
         Valid megoldások voltak még a következők
          */
-        // csak a karakterekkel amiket a kérdés kért
+        /*
+         csak a karakterekkel amiket a kérdés kért
+         */
         if (ip.contains(" ") || ip.contains("\n") || ip.contains("\t")) {
             throw new IllegalArgumentException();
         }
 
-        // reguláris kifejezésekkel
+        /*
+         reguláris kifejezésekkel
+         */
         if (ip.matches(".*\\s.*")) {
             throw new IllegalArgumentException();
         }
@@ -127,7 +131,9 @@ public class Player {
      */
     public ArrayList<Car> getSortedCars() {
         ArrayList<Car> sortedCars = new ArrayList<Car>(cars); // 1 pont
-        // maga a collection kerül átrendezésre, nem egy rendezett másolat készül belőle
+        /*
+        maga a collection kerül átrendezésre, nem egy rendezett másolat készül belőle
+         */
         Collections.sort(sortedCars);
         return sortedCars;
     }

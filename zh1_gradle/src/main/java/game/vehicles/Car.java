@@ -44,7 +44,9 @@ public class Car extends Vehicle implements Comparable<Car> {
         }
     }
 
-    // https://github.com/balihb/java-gyak/tree/master/13#comparable
+    /*
+    https://github.com/balihb/java-gyak/tree/master/13#comparable
+     */
     @Override
     public int compareTo(Car that) {
         int compareResult = Integer.compare(this.maxSpeed, that.maxSpeed); // 1 pont

@@ -4,8 +4,14 @@ import game.utils.VehicleException;
 
 
 public abstract class Vehicle {
+    /*
+    Ökölszabály szerint minden adattagot alapból privátra állítunk.
+     */
     // 1 pont (adattagok, getter, láthatóság, konstruktor)
     private static int currentId = 0;
+    /*
+    A protected helyett használhatnánk private adattagot egy getterrel, amit a leszármazotban hívunk.
+     */
     protected final int id;
     private double currentSpeed;
 
