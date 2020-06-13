@@ -29,9 +29,9 @@ public abstract class Vehicle {
 
     /*
     sok esetben láttam az accelerate-t throws nélkül
-    ami nagyon fontos.
-    a leszármazottban implementált metódus dobhat kevesebb exception-t, de többet nem.
-    ugyan ennek az osztálynak a leírásánal nem szerepelt az exception, de a Car és Train-nél igen,
+    ami nagyon fontos, hogy a leszármazottban implementált metódus dobhat kevesebb exception-t az ős felülírt metódusánál,
+    de többet nem.
+    ugyan ennek az osztálynak a specifikációjában nem szerepelt az exception, de a Car és Train-nél igen,
     ezért itt kell szerepelnie az exception dobásának
      */
 
