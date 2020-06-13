@@ -1,6 +1,7 @@
 rootProject.name = "java-gyak"
 
 include("1")
+include("1:0:big-decimal")
 include("1:1")
 include("1:2")
 include("1:3")
@@ -97,3 +98,5 @@ include("12:fel2")
 
 include("13")
 include("13:wallet-sol")
+
+include("zh1_gradle")
