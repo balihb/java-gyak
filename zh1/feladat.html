@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+
+
+  
+  
+  
+  
+  
+  
+
+<div>
+<h1>Programozási nyelvek (BSc, 18) Java zh programozási feladat</h1>
+<h2>Szabályok</h2>
+<p>Az alábbi feladatleírásban azon nyelvi elemek (osztályok, metódusok 
+stb) leírása szerepel, amelyeknek kötelező megjelennie a megoldásban. A 
+megnevezetteken kívül további rejtett adattagok és metódusok, valamint 
+nyilvános setter/getter metódusok felvétele megengedett. Ha a 
+feladatleírásban meg van adva egy nyelvi elem neve, kötelező azt 
+használni. A nyelvi szabályok mellett betartandóak a Java nyelv 
+konvenciói is.</p>
+<p>Ha bármilyen kérdés, észrevétel felmerül, azt a gyakorlatvezetőnek kell jelezni, <strong>nem</strong> a diáktársaknak!</p>
+<p>Az elkészített megoldásokat <strong>generált fájlok (.class, .jar) nélkül</strong> a gyakorlatvezetőnek kérjük elküldeni <strong>inf-es email címről</strong>. Az email tárgya <em>Java zh</em>
+ legyen. Az emailhez csatolni kell a megoldást zip archívumba 
+csomagolva. A zip-fájlban a csomagoknak megfelelő könyvtárak is legyenek
+ eltárolva. Linux alatt az alábbi paranccsal hozhatunk létre zip-fájlt:</p>
+<pre><code>zip -r megoldas.zip *</code></pre>
+<p>Használható segédanyagok:</p>
+<ul>
+<li><a href="http://base.zip/" target="_blank">Letölthető zip fájl</a>, amely tartalmazza a junit tesztelő környezet jar fájljait, valamint a <code>users/</code> könyvtárban a mintaként adott szöveges inputfájlokat.</li>
+<li><a href="https://bead.inf.elte.hu/files/java" target="_blank">Java dokumentáció</a>.</li>
+<li>Legfeljebb egy üres lap és toll.</li>
+</ul>
+<h2>A feladat összefoglaló leírása</h2>
+<p>Egy MultiPlayer (többszereplős) játékban játékosok (<code>Player</code>) és járművek (<code>Vehicle</code>, <code>Car</code>, <code>Train</code>) vannak. A járműveknek van aktuális sebességük, mely a játék folyamán megváltozhat (<code>accelerate</code>,
+ gyorsítás). A játékosoknak van virtuális pénzük, amellyel autókat 
+vásárolhatnak. Egy játékosnak tetszőleges számú autója lehet. A járművek
+ közül az autók (<code>Car</code>) rendelkeznek <em>természetes összehasonlítással</em> (<code>compareTo</code>), a játékosokon pedig értelmezünk egy speciális egyenlőségfogalmat (<code>equals</code>).</p>
+<h2>Alapfeladat (19 pont)</h2>
+<p>Készítsen <code>game.Player</code> néven osztályt, mellyel egy játékost reprezentálunk. Egy játékosnak van neve (<code>String</code>), IP-címe (<code>String</code>), virtuális pénze (<code>int</code>), valamint tartozik hozzá járművek (<code>Car</code>) egy listája (<code>ArrayList&lt;&gt;</code>). A <code>Player</code>
+ osztálynak legyen egy (paraméteres) konstruktora, amely átveszi és 
+eltárolja a játékos nevét, IP-címét és virtuális pénzét, ha az 
+argumentumok megfelelőek. Ha az argumentumok nem megfelelőek, a 
+konstruktor dobjon <code>IllegalArgumentException</code> kivételt.</p>
+<ul>
+<li>A név akkor megfelelő, ha nem <code>null</code> referencia.</li>
+<li>Az IP-cím akkor megfelelő, ha nem <code>null</code> referencia és a hossza pozitív, valamint nem tartalmaz fehér szóközt (whitespace: szóköz, tabulátor, sorvége).</li>
+<li>A virtuális pénz akkor megfelelő, ha nemnegatív.</li>
+</ul>
+<p>Írja meg a járművek absztrakt <code>game.vehicles.Vehicle</code> ősosztályát. Minden megkonstruált jármű objektumnak van egyedi, létrehozás után már módosíthatatlan azonosítója (<code>id</code>,
+ egész szám, a leszármazott osztályok számára is elérhető). Az első 
+jármű azonosítója 0, a következőé 1, és így tovább. A járműveknek van 
+aktuális sebessége (<code>currentSpeed</code>, <code>double</code> típusú rejtett adattag). A sebességhez írjon getter metódust. Írjon visszatérési érték nélküli <code>accelerateCurrentSpeed()</code>
+ nevű metódust, amely paraméterként a sebességváltozás értékét kapja 
+(lehet negatív is), és a metódus a jármű sebességét ellenőrzötten 
+megváltoztatja: amennyiben a jármű sebessége 0 alá csökkenne, a metódus <code>game.utils.VehicleException</code>
+ kivételt dob. A negatív paraméter jelenti a jármű lassítását. A 
+metódust rejtse el a külvilág elől, a leszármazott osztályoknak viszont 
+legyen elérhető, de nem felüldefiniálható. A <code>Vehicle</code> osztálynak legyen végül egy implementáció nélküli, nyilvános <code>accelerate()</code> metódusa is, amely a sebességváltoztatás mértékét kapja paraméterként, és nincs visszatérési értéke. Az <code>accelerate()</code> metódust a leszármazott osztályok fogják implementálni, amikor is különböző módon hívják meg az ősosztály <code>accelerateCurrentSpeed()</code> metódusát.</p>
+<p>A <code>game.utils.VehicleException</code> kivétel egy ellenőrzött 
+kivétel legyen, amelyet lehet paraméter nélkül és paraméteresen is 
+konstruálni. Paraméteres konstruáláskor egy sztringet fogad 
+paraméterként, és meghívja az ősosztály paraméteres konstruktorát.</p>
+<p>A <code>game.vehicles.Train</code> és <code>game.vehicles.Car</code> osztályok származzanak a <code>game.vehicles.Vehicle</code> osztályból. Definiálják felül (implementálják) az ősosztálytól örökölt <code>accelerate()</code> metódust! A <code>Train</code> járművet csak lassan lehet fékezni: amennyiben az <code>accelerate()</code> paramétere, <code>amount</code> negatív, akkor az <code>amount</code> 1/10-ével, máskülönben <code>amount</code>-tal hívja meg az ősosztály <code>accelerateCurrentSpeed()</code> metódusát.</p>
+<p>A <code>game.vehicles.Car</code> osztály egy autót reprezentál. Egy autónak van maximális sebessége (<code>int</code>) és ára (<code>int</code>). Ezen jellemzők legyenek létrehozás után már módosíthatatlan adattagjai a <code>Car</code>-nak. A konstruktor vegye át és tárolja el ezen jellemzőket. Az árhoz tartozzon getter metódus. Írjon <code>toString()</code> metódust, amely tartalmazza a jármű egyedi azonosítóját (<code>id</code>), maximális sebességét és árát. Definiálja felül (implementálja) az ősosztálytól örökölt <code>accelerate()</code>
+ metódust. Az autó sebessége csak akkor változzon meg, ha az autó új 
+sebessége nem lépné át az autó maximális sebességét, egyébként ne 
+történjen semmi.</p>
+<p>Írjon <code>main.Main</code> névvel főprogramot. A főprogram osztálya tartalmaz egy <code>loadPlayerFromFile()</code>
+ osztályszintű metódust, amely paraméterként egy játékosnevet vár, és 
+beolvassa a “users/játékosnév.txt” szöveges állományból a játékos 
+adatait. A metódus kódját alább <em>hibásan</em> közöljük. A hibákat (4 darab) meg kell keresni, és ki kell javítani!</p>
+<div><pre><code><span><a href="#0.2_cb2-1"></a><span>public</span> <span>static</span> Player <span>loadPlayerFromFile</span>(<span>String</span> playerName){</span>
+<span><a href="#0.2_cb2-2"></a>    <span>File</span> input = <span>new</span> <span>File</span>(<span>"users/"</span> + playerName + <span>".txt"</span>);</span>
+<span><a href="#0.2_cb2-3"></a></span>
+<span><a href="#0.2_cb2-4"></a>    <span>String</span> data = <span>null</span>;</span>
+<span><a href="#0.2_cb2-5"></a>    <span>try</span> (<span>BufferedReader</span> bf = <span>new</span> <span>BufferedReader</span>(<span>new</span> <span>FileReader</span>(input))){</span>
+<span><a href="#0.2_cb2-6"></a>        <span>String</span> line = bf.<span>readLine</span>();</span>
+<span><a href="#0.2_cb2-7"></a>        data = line.<span>split</span>(<span>" "</span>);</span>
+<span><a href="#0.2_cb2-8"></a></span>
+<span><a href="#0.2_cb2-9"></a>        <span>return</span> <span>new</span> <span>Player</span>(playerName, data[<span>1</span>], data[<span>2</span>]);</span>
+<span><a href="#0.2_cb2-10"></a>    } <span>catch</span> (<span>IOException</span> e) {</span>
+<span><a href="#0.2_cb2-11"></a>        <span>System</span>.<span>out</span>.<span>println</span>(<span>"IO error occured: "</span> + e.<span>getMessage</span>());</span>
+<span><a href="#0.2_cb2-12"></a>    }</span>
+<span><a href="#0.2_cb2-13"></a></span>
+<span><a href="#0.2_cb2-14"></a>    <span>return</span> <span>null</span>;</span>
+<span><a href="#0.2_cb2-15"></a>}</span></code></pre></div>
+<p>A <code>loadPlayerFromFile()</code> metódus beolvassa a 
+“users/playerName.txt” fájlt (feltehető, hogy a fájl egyetlen egy sort 
+tartalmaz). A fájl egyetlen sorában egy IP-cím (sztring) és egy 
+virtuális pénzösszeg (<code>int</code>) áll szóközzel elválasztva 
+(feltehető, hogy az IP-cím szóközt nem tartalmaz). A metódus a 
+játékosnévvel és a beolvasott adatokkal megkonstruál egy játékos 
+objektumot. Amennyiben a fájlban a pénzösszeg nem konvertálható egész 
+számmá, akkor a metódus 0 kezdőpénzzel konstruál egy játékost.</p>
+<p>A főprogramban <strong>nem</strong> kell olvasni a billentyűzetről 
+vagy ciklusokat írni, a már megírt függvények működését szeretnénk 
+kipróbálni beégetett értékekkel. A főprogramban konstruálja meg a 
+következő játékosokat: <code>Daniel</code>, <code>Peter</code>, <code>Richard</code>, <code>Tamas</code>, <code>Zorror</code> (használja a <code>users/</code> könyvtárban lévő txt fájlokat). Példányosítson legalább 5 autót (<code>Car</code>), amelyek között legalább 2-nek azonos a maximális sebessége és eltérő árúak.</p>
+<p>Írjon unit teszteket (<code>tests.Tests</code> osztály) a következő elvárások tesztelésére.</p>
+<ul>
+<li>A <code>Player</code> konstruktora <code>null</code> név esetén <code>IllegalArgumentException</code> kivételt vált ki.</li>
+<li>A <code>Player</code> konstruktora negatív virtuális pénz esetén <code>IllegalArgumentException</code> kivételt vált ki.</li>
+<li>A <code>Player</code> konstruktora szóközt tartalmazó IP-cím esetén <code>IllegalArgumentException</code> kivételt vált ki.</li>
+<li>A <code>Player</code> konstruktor sikeres lefutása után a konstruált játékos virtuális pénze jól állítódott be.</li>
+<li>A <code>Car</code> osztály <code>accelerate()</code> metódusa pozitív és negatív paraméter esetén is jól működik.</li>
+<li>A <code>Car</code> osztály <code>accelerate()</code> metódusa a maximális sebesség átlépésénél nem csinál semmit.</li>
+<li>A <code>Car</code> osztály <code>accelerate()</code> metódusa <code>VehicleException</code> kivételt vált ki, ha a sebesség 0 alá csökkenne.</li>
+</ul>
+<p>Emlékeztető a JUnit használatához:</p>
+<ul>
+<li>Az <code>org.junit.Assert</code> osztályt (és/vagy annak statikus metódusait, pl. <code>assertEquals</code>) kell importálni, valamint az <code>org.junit.Test</code> annotációt.</li>
+<li>A JUnit futtatása, ha a tesztesetek osztálya a névtelen csomagba tartozó <code>SimpleTest</code> osztály, a következő parancsokkal történik.</li>
+</ul>
+<p>Windows:</p>
+<pre><code>javac -cp .;junit-4.12.jar;hamcrest-<wbr>core-1.3.jar SimpleTest.java
+java -cp .;junit-4.12.jar;hamcrest-<wbr>core-1.3.jar org.junit.runner.JUnitCore SimpleTest</code></pre>
+<p>Linux:</p>
+<pre><code>javac -cp .:junit-4.12.jar:hamcrest-<wbr>core-1.3.jar SimpleTest.java
+java -cp .:junit-4.12.jar:hamcrest-<wbr>core-1.3.jar org.junit.runner.JUnitCore SimpleTest</code></pre>
+<h2>Egyenlőség (5 pont)</h2>
+<p>Írjon a <code>Player</code> osztályhoz <code>equals()</code> metódust úgy, hogy az megfeleljen az <code>equals()</code> metódussal szembeni elvárásoknak, valamint írjon alkalmas <code>hashCode()</code>
+ metódust. Két játékos objektumot akkor tekintünk egyenlőnek, ha 
+megegyezik a nevük, ugyanannyi pénzük van, és ugyanazokat az autókat 
+vásárolták meg (használja az <code>ArrayList</code> <code>equals()</code>-át). Az IP-cím egyezőségét tehát <strong>nem</strong> követeljük meg! Írjon unit teszteket azokra az elvárásokra, hogy különböző IP-című játékosokat tényleg azonosnak tekint az <code>equals()</code>, valamint, hogy egyenlő játékosok <code>hashCode()</code>-ja is egyenlő.</p>
+<h2>Összehasonlítás, rendezés (6 pont)</h2>
+<p>A <code>Car</code> osztály valósítsa meg a <code>Comparable</code> <code>interface</code>-t. Két <code>Car</code>
+ objektum közül az a kisebb, amelyiknek maximális sebessége kisebb. 
+Egyenlő maximális sebesség esetén az a kisebb, amelyik olcsóbb. Írjon 
+unit tesztet arra, hogy tranzitív-e a <code>compareTo()</code>.</p>
+<p>Egy játékos megvásárolhat tetszőleges számú autót, ha van elég virtuális pénze. Írjon <code>buyCar()</code> metódust a <code>Player</code> osztályhoz, amely <code>Car</code> referenciát fogad paraméterként, és nincs visszatérési értéke. Amennyiben a játékosnál elegendő pénz van, akkor a <code>Car</code>
+ referenciát adja hozzá a játékos által birtokolt autók listájához, és 
+csökkentse a pénzét az autó árával. A metódus ne engedje meg, hogy 
+ugyanazt az autót több játékos is megvásárolhassa (ennek megoldásához 
+egészítse ki a kódot esetlegesen szükséges adatagokkal/getterekkel). 
+Sikertelen vásárlás esetén a metódus váltson ki <code>VehicleException</code> kivételt valamilyen informatív üzenettel. Írjon unit teszteket amikor a metódus <code>VehicleException</code> kivételelt dob.</p>
+<p>Egy játékos által birtokolt autók listáját lehessen lekérdezni a <code>getSortedCars()</code> metódussal. A metódus térjen vissza az autók rendezett listájával, ahol a rendezési szempont az autók előbb megírt <code>compareTo()</code> metódusa. Vigyázzon arra, hogy a metódus ne szivárogtassa ki a <code>Player</code> osztály belső állapotát!</p>
+<p>Példaként a főprogramban a Daniel játékos vásároljon legalább 3 
+autót, amelyekben legyen legalább 2 olyan, amelynek azonos a maximális 
+sebessége. Írassa ki a képernyőre a Daniel játékos által birtokolt autók
+ rendezett listáját.</p>
+</div>
+
+</body></html>
