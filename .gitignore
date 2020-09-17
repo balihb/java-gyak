@@ -1,7 +1,8 @@
 sourcefiles.txt
 
-# Created by https://www.gitignore.io/api/java,emacs,gradle,eclipse,notepadpp,intellij+all,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=java,emacs,gradle,eclipse,notepadpp,intellij+all,visualstudiocode
+
+# Created by https://www.toptal.com/developers/gitignore/api/java,emacs,gradle,eclipse,notepadpp,intellij+all,visualstudiocode,sublimetext
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,emacs,gradle,eclipse,notepadpp,intellij+all,visualstudiocode,sublimetext
 
 ### Eclipse ###
 .metadata
@@ -54,22 +55,19 @@ local.properties
 
 # Annotation Processing
 .apt_generated/
+.apt_generated_test/
 
 # Scala IDE specific (Scala & Java development for Eclipse)
 .cache-main
 .scala_dependencies
 .worksheet
 
+# Uncomment this line if you wish to ignore the project description file.
+# Typically, this file would be tracked if it contains build/dependency configurations:
+#.project
+
 ### Eclipse Patch ###
-# Eclipse Core
-.project
-
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
-
-# Annotation Processing
-.apt_generated
-
+# Spring Boot Tooling
 .sts4-cache/
 
 ### Emacs ###
@@ -124,7 +122,7 @@ flycheck_*.el
 
 
 ### Intellij+all ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
@@ -154,6 +152,9 @@ flycheck_*.el
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
 # .idea/modules.xml
 # .idea/*.iml
 # .idea/modules
@@ -237,12 +238,45 @@ hs_err_pid*
 ### NotepadPP ###
 # Notepad++ backups #
 
+### SublimeText ###
+# Cache files for Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# Workspace files are user-specific
+*.sublime-workspace
+
+# Project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using Sublime Text
+# *.sublime-project
+
+# SFTP configuration file
+sftp-config.json
+
+# Package control specific files
+Package Control.last-run
+Package Control.ca-list
+Package Control.ca-bundle
+Package Control.system-ca-bundle
+Package Control.cache/
+Package Control.ca-certs/
+Package Control.merged-ca-bundle
+Package Control.user-ca-bundle
+oscrypto-ca-bundle.crt
+bh_unicode_properties.cache
+
+# Sublime-github package stores a github token in this file
+# https://packagecontrol.io/packages/sublime-github
+GitHub.sublime-settings
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+*.code-workspace
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
@@ -267,4 +301,4 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
-# End of https://www.gitignore.io/api/java,emacs,gradle,eclipse,notepadpp,intellij+all,visualstudiocode
+# End of https://www.toptal.com/developers/gitignore/api/java,emacs,gradle,eclipse,notepadpp,intellij+all,visualstudiocode,sublimetext
