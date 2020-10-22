@@ -1,0 +1,3 @@
+class Distance {
+	double meter;
+}
