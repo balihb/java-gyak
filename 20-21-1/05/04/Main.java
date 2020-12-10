@@ -4,9 +4,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 
 public class Main {
 	public static void main(String[] args) {
+		System.out.println(1.56);
+        System.out.println(new BigDecimal(1.56));
+		
+		
 		if(args.length < 2) {
 			System.err.println("Nem eleg arg");
 		} else {
