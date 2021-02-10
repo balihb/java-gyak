@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+</head>
+<body>
+<h1 id="programozási-nyelvek-bsc-18-java-1.-feladatsor">Programozási nyelvek (BSc, 18) Java 1. feladatsor</h1>
+<h3 id="feladat">1. feladat</h3>
+<p>Készítsük el a lehető legrövidebb Java fordítási egységet.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> A{}</code></pre></div>
+<p>Fordítsuk is le!</p>
+<pre><code>javac A.java</code></pre>
+<h3 id="feladat-1">2. feladat</h3>
+<p>Készítsük el a SKIP program megfelelőjét Javában!</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> Skip {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>( <span class="bu">String</span>[] args ){
+    }
+}</code></pre></div>
+<p>Fordítsuk és futtassuk!</p>
+<pre><code>javac Skip.java
+java Skip</code></pre>
+<h3 id="feladat-2">3. feladat</h3>
+<p>Készítsünk programot, amely a billentyűzetről kéri be a felhasználó nevét, majd üdvözli! Használjuk az alábbi két parancsot!</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">System</span>.<span class="fu">console</span>().<span class="fu">readLine</span>()
+<span class="bu">System</span>.<span class="fu">console</span>()<span class="fu">.printf</span>(...)</code></pre></div>
+<h3 id="feladat-3">4. feladat</h3>
+<p>Készítsünk programot, amely a felhasználónevet parancssori argumentumként kapja, majd üdvözli a felhasználót! A szabványos kimenetre történő kiírás ezzel a paranccsal is elvégezhető - ezt használjuk majdnem mindig.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(...)</code></pre></div>
+<h3 id="feladat-4">5. feladat</h3>
+<p>Az alábbi Java program feladata, hogy kiírja az 1-től 4-ig lévő számok felét.</p>
+<p>Az elvárt kimenet:</p>
+<pre><code>0.5
+1.0
+1.5
+2.0
+Kiirtam 4 szamot</code></pre>
+<p>Javítsa ki a programot!</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> Print {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>() {
+        <span class="kw">for</span>( <span class="dt">int</span> i = <span class="dv">1</span>; i &lt; <span class="dv">4</span>; i++ ) {
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">Println</span>(i/<span class="dv">2</span>);
+        }
+        i = <span class="dv">4</span>;
+        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Kiirtam &quot;</span> + i + <span class="st">&quot; szamot&quot;</span>)
+    }
+}</code></pre></div>
+<h3 id="feladat-5">6. feladat</h3>
+<p>Készítsünk programot, amely bekér két egész számot, és kiírja a köztük lévő egész számok felét. A beolvasás során kapott sztringeket egész számmá az alábbi konverziós függvénnyel alakíthatjuk át.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="bu">Integer</span>.<span class="fu">parseInt</span>(...)</code></pre></div>
+<h3 id="feladat-6">7. feladat</h3>
+<p>Készítsünk egy programot, amely kiszámolja két egész szám összegét, különbségét, szorzatát, hányadosát, és az osztási maradékot is megadja! Figyeljen a nullával való osztásra (ez esetben ne végezze el az osztást)! A két számot parancssori paraméterként kell megadni. Vizsgáljuk meg azt is, hogy megfelelő számú parancssori paramétert adtunk–e át!</p>
+<h3 id="feladat-7">8. feladat</h3>
+<p>Írjuk meg az <code>n</code> faktoriálisát kiszámoló programot.</p>
+<h3 id="gyakorló-feladat">1. gyakorló feladat</h3>
+<p>Készítsünk programot, amely a parancssori argumentumában megadott számról eldönti, hogy tökéletes–e! A számelméletben tökéletes számnak nevezzük azokat a természetes számokat, amelyek megegyeznek az önmaguknál kisebb osztóik összegével (vagyis az összes osztóik összege a szám kétszerese). Az első négy ilyen szám: 6, 28, 496 és 8128.</p>
+<h3 id="gyakorló-feladat-1">2. gyakorló feladat</h3>
+<p>Módosítsuk az előző megoldásunkat úgy, hogy 1–től a paraméterként megadott határig minden egész számra vizsgálja a tökéletességet és megadja, hogy abban az intervallumban mennyi ilyet talált! Ha nem talált egyetlen ilyen számot sem, akkor írja ki, hogy egyetlen tökéletes szám sincs a megadott intervallumban.</p>
+<h3 id="gyakorló-feladat-2">3. gyakorló feladat</h3>
+<p>Számoljuk ki a parancssori argumentumként kapott egész számok legnagyobb közös osztóját! (Nem csak 2 számét, hanem az összes kapott számét!)</p>
+<p>A paraméterként kapott egész számok és az eredmény is legyen <code>long</code> típusú. Sztringeket ilyen típusú értékre a <code>Long.parseLong(...)</code> függvénnyel alakíthatunk.</p>
+<h3 id="gyakorló-feladat-3">4. gyakorló feladat</h3>
+<p>Írjunk programot, mely kiszámítja egy szám négyzetgyökét a babilóniai módszerrel!</p>
+<p>Az <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math> szám négyzetgyökének megállapításához számoljuk ki az alábbi <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math> sorozat első néhány elemét. A program kérje be az <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math> számot, és kérjen be egy <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> pontosságot. A számolást addig folytassuk, amíg két egymást követő <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math> érték különbsége nagyobb, mint <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>. A sorozat legutolsó kiszámított elemét írjuk ki!</p>
+<p><span class="math display">$$x_0 = {S \over 2}$$</span> <span class="math display">$$x_{n+1} = {1 \over 2} \left( x_n + {S \over x_n}\right)$$</span></p>
+<p>Egy sztringet a <code>Double.parseDouble(...)</code> függvénnyel konvertálhatunk <code>double</code> típusúvá.</p>
+<h3 id="gyakorló-feladat-4">5. gyakorló feladat</h3>
+<p>Számoljuk ki <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>2</mn></msqrt><annotation encoding="application/x-tex">\sqrt{2}</annotation></semantics></math> értékét közelítőleg lánctört kiértékelésével.</p>
+<p><span class="math display">$$\sqrt{2} - 1 = {1 \over {2 + {1 \over {2 + {1 \over {2 + \dots}}}}}}$$</span></p>
+<h3 id="gyakorló-feladat-5">6. gyakorló feladat</h3>
+<p>Számoljuk ki <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math> értékét közelítőleg lánctört segítségével!</p>
+<p><span class="math display">$$e - 1 = 1 + {1 \over {1 + {1 \over {2 + {1 \over {1 + {1 \over {1 + {1 \over {4 + {1 \over {1 + {1 \over {1 + {1 \over {6 + \dots}}}}}}}}}}}}}}}}$$</span></p>
+<h3 id="gyakorló-feladat-6">7. gyakorló feladat</h3>
+<p>Miért rossz az alábbi program? Hogyan kellene kijavítani?</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">class</span> Odd {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>( <span class="bu">String</span>[] args ){
+        <span class="kw">if</span>( args.<span class="fu">length</span> != <span class="dv">1</span> ){
+            <span class="bu">System</span>.<span class="fu">err</span>.<span class="fu">println</span>(<span class="st">&quot;Adjon meg pontosan egy számot a parancssorban!&quot;</span>);
+        } <span class="kw">else</span> {
+            <span class="dt">int</span> num = <span class="bu">Integer</span>.<span class="fu">parseInt</span>(args[<span class="dv">0</span>]);
+            <span class="bu">String</span> answer = (num % <span class="dv">2</span> == <span class="dv">1</span>) ? <span class="st">&quot;páratlan&quot;</span> : <span class="st">&quot;páros&quot;</span>;
+            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>( answer );
+        }
+    }
+}</code></pre></div>
+</body>
+</html>
