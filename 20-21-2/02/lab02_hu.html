@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+</head>
+<body>
+<h1 id="programozási-nyelvek-bsc-18-java-2.-feladatsor">Programozási nyelvek (BSc, 18) Java 2. feladatsor</h1>
+<h3 id="feladat">1. feladat</h3>
+<p>Készítsen egy <code>Point</code> osztályt <code>double</code> típusú <code>x</code> és <code>y</code> mezőkkel. Írja meg a <code>move(dx,dy)</code> műveletet, mellyel egy pontot el lehet tolni <code>dx</code> és <code>dy</code> koordinátákkal, valamint a <code>mirror(cx,cy)</code> műveletet, mely egy <code>cx</code> és <code>cy</code> koordinátájú pontra való tükrözést valósít meg.</p>
+<p>Készítsen <code>PointMain</code> néven Java programot, amelyben bemutatja a <code>Point</code> osztály használatát.</p>
+<h3 id="feladat-1">2. feladat</h3>
+<p>Módosítsa a <code>Point</code> osztályban a <code>mirror(p)</code> műveletet úgy, hogy paramétere (a tükrözési középpont) egy <code>Point</code> objektum legyen!</p>
+<p>Írjon <code>distance(p)</code> műveletet is, mely kiszámolja az adott pont távolságát egy paraméterként kapott <code>p</code> ponttól. Használja a <code>Math.sqrt(...)</code> függvényt és a Pitagorasz tételt!</p>
+<p>Frissítse a <code>PointMain</code> osztályt az új műveletekkel!</p>
+<h3 id="feladat-2">3. feladat</h3>
+<p>Javasoljuk ezt a feladatot önállóan megoldani.</p>
+<p>Valósítsa meg a <code>Complex</code> osztályt <code>double</code> típusú valós és képzetes résszel! Írjon <code>abs()</code> metódust, amely kiszámolja a komplex szám abszolút értékét. Valósítsa meg az <code>add(c)</code>, a <code>sub(c)</code> és a <code>mul(c)</code> műveleteket oly módon, hogy az <code>add</code> adja hozzá a komplex számhoz a paraméterként kapott <code>c</code> komplex számot, a <code>sub</code> vonja ki belőle, a <code>mul</code> pedig szorozza hozzá.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">alpha.<span class="fu">re</span> = <span class="dv">3</span>
+alpha.<span class="fu">im</span> = <span class="dv">2</span>
+beta.<span class="fu">re</span> = <span class="dv">1</span>
+beta.<span class="fu">im</span> = <span class="dv">2</span>
+alpha.<span class="fu">add</span>(beta)
+<span class="co">// alpha.re == 4 &amp;&amp; alpha.im == 4 &amp;&amp; beta.re == 1 &amp;&amp; beta.im == 2</span></code></pre></div>
+<h3 id="feladat-3">4. feladat</h3>
+<p>Készítsen <code>Circle</code> néven kört reprezentáló osztályt. Egy körnek van középpontja (<code>x</code> és <code>y</code> nevű, <code>double</code> típusú adattag) és sugara (<code>radius</code>).</p>
+<p>Írjon <code>enlarge(f)</code> metódust, amellyel a kör sugarát <code>f</code>-szeresére változtatja, illetve <code>getArea()</code> metódust, amely megadja a kör területét. Használjuk a <code>Math.PI</code> értéket!</p>
+<h3 id="feladat-4">5. feladat</h3>
+<p>Készítsen egy <code>Distance</code> programot. Ez a parancscsori paramétereket pontoknak értelmezi: a pontok szóközzel elválasztva vannak felsorolva, minden pontnál elöl az <code>x</code>, utána az <code>y</code> koordináta (ezek is szóközzel elválasztva).</p>
+<p>Feltételezhetjük, hogy páros számú paraméter van, amelyek mind egész számok.</p>
+<p>A program a <code>Point</code> osztály felhasználásával számítsa ki és adja össze az egymás mellett lévő pontok távolságát (pl. 3 pont esetén az 1. és a 2. pont távolságához hozzá kell adni a 2. és a 3. pont távolságát), majd az eredményt írja ki.</p>
+<p>Példák:</p>
+<pre><code>&gt; java Distance
+0.0
+&gt; java Distance 1 2
+0.0
+&gt; java Distance 0 0 3 4
+5.0
+&gt; java Distance 1 2 4 6
+5.0
+&gt; java Distance 1 2 4 6 7 6
+8.0</code></pre>
+<h3 id="gyakorló-feladat">1. gyakorló feladat</h3>
+<p>Készítsük el a Complex osztályba a <code>conjugate()</code> műveletet, mely a komplex számot átalakítja a komplex konjugáltjára. Készítsük el a <code>reciprocate()</code> metódust, mely a komplex számot reciprokára alakítja. Definiáljuk a <code>div(c)</code> művelet, mely elosztja a komplex számot a paraméterként kapott <code>c</code> komplex számmal.</p>
+<h3 id="gyakorló-feladat-1">2. gyakorló feladat</h3>
+<p>Készítse el a <code>Line</code> osztályt, mellyel egy adott sík egyeneseit reprezentálhatjuk. Egy egyenest az <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi><mo>=</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">ax + by = c</annotation></semantics></math> összefüggés ír le, ahol <code>a</code>, <code>b</code> és <code>c</code> számok <code>double</code> típusúak. (Ezek lesznek az osztály adattagjai.)</p>
+<p>Írjon az osztályba egy <code>contains(p)</code> műveletet, mely eldönti, hogy egy <code>p</code> pont rajta van-e az egyenesen!</p>
+<p>Írjon egy <code>isParallelWith(l)</code> és egy <code>isOrthogonalTo(l)</code> metódust, melyek eldöntik, hogy az egyenes párhuzamos-e a paraméterként kapott <code>l</code> egyenessel, illetve merőleges-e rá!</p>
+<h3 id="gyakorló-feladat-2">3. gyakorló feladat</h3>
+<p>Készítse el a <code>Segment</code> osztályt, mely egy szakaszt reprezentál. A szakasz objektumok ábrázolásához a két végpont koordinátáit tároljuk el. Az adattagok <code>x1</code>, <code>y1</code>, <code>x2</code>, <code>y2</code> legyenek, mind <code>double</code> típusú.</p>
+<p>Írjon az osztályba egy <code>line()</code> metódust, mely visszaad egy olyan <code>Line</code> objektumot, amely a szakaszra illeszkedő egyenest reprezentál.</p>
+<p>Írjon az osztályba egy <code>contains(p)</code> műveletet, mely eldönti, hogy egy <code>p</code> pont rajta van-e a szakaszon!</p>
+<p>Készítsen <code>orientation(p)</code> metódust a <code>Segment</code> osztályba, mely eldönti, hogy a szakasz kezdőpontjából a végpontjába mutató vektor, valamint a szakasz végpontjából a paraméterként kapott <code>p</code> pontba mutató vektor milyen orientációjú. A metódus adjon vissza 0-t, ha a <code>p</code> rajta van a szakasz által meghatározott egyenesen, adjon vissza pozitív értéket, ha a két vektor az óramutató járásával megegyező irányban van egymással, illetve negatív értéket, ha az óramutató járásával ellenkező irányú. Ez elég egyszerű: ha a <code>p</code> pont koordinátáit <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>3</mn></msub><annotation encoding="application/x-tex">x_3</annotation></semantics></math> és <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mn>3</mn></msub><annotation encoding="application/x-tex">y_3</annotation></semantics></math> jelöli, akkor a metódus az alábbi kifejezést adja vissza.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>y</mi><mn>2</mn></msub><mo>−</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>3</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>y</mi><mn>3</mn></msub><mo>−</mo><msub><mi>y</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(y_2 - y_1)(x_3 - x_2) - (y_3 - y_2)(x_2 - x_1)</annotation></semantics></math></p>
+<p>Készítsen egy <code>intersects(s)</code> metódust, mely visszaadja, hogy a szakasznak van-e közös pontja a paraméterként kapott <code>s</code> szakasszal! A megoldáshoz használja az alábbi segítséget!</p>
+<p><a href="http://www.dcs.gla.ac.uk/~pat/52233/slides/Geometry1x1.pdf" class="uri">http://www.dcs.gla.ac.uk/~pat/52233/slides/Geometry1x1.pdf</a><br />
+&lt;Geometry1x1.pdf&gt;</p>
+<h3 id="gyakorló-feladat-3">4. gyakorló feladat</h3>
+<h4 id="a">a</h4>
+<p>Készítsük el a <code>Rectangle</code> osztályt, mely a koordinátatengelyekkel párhuzamos oldalú téglalapok ábrázolására alkalmas! A <code>Rectangle</code> objektumukban tároljuk el valamelyik csúcspontjuk <code>x</code> és <code>y</code> koordinátáját, valamint a téglalap szélességét és magasságát. Ez négy adattagot jelent: <code>x</code>, <code>y</code>, <code>width</code> és <code>height</code>. Legyen mindegyik típusa dupla-pontosságú lebegőpontos típus.</p>
+<p>A szélesség és a magasság felvehet negatív értéket is. Legyen például az <code>r</code> négy adattagja rendre 1, 5, 6, -2. Ekkor az <code>r</code> bal alsó csúcsának koordinátái 1 és 3 lesznek.</p>
+<p>Definiáljuk a <code>Rectangle</code> objektumokon a <code>topLeft()</code>, a <code>topRight()</code>, a <code>bottomLeft()</code> és a <code>bottomRight()</code> metódusokat, melyek mindegyike egy <code>Point</code> objektumot ad vissza, értelemszerűen a téglalap megfelelő csúcsának a koordinátáit.</p>
+<p>A <code>Rectangle</code> osztályhoz készítsünk egy főprogramot, mely meghatározza a parancssori argumentumaként kapott téglalapok befoglaló téglalapjának csúcspontjait. A főprogram parancssori argumentumai számok legyenek (legalább 4). Minden számnégyes egy <code>Rectangle</code> objektumot határoz meg. Ezeket kell feldolgozni, és a végén kiírni a befoglaló téglalap bal alsó és jobb felső csúcsainak koordinátáit.</p>
+<pre><code>$ java RectangleMain 3 5 1 -7 2 5 8 8
+Bounding rectangle: 2.0;-2.0 - 10.0;13.0</code></pre>
+<p>A fenti példa két téglalap befoglaló téglalapját határozza meg. Az első téglalap egyik csúcsa (3,5) koordinátájú, szélessége 1, magassága -7. A másik téglalap egyik csúcsa (2,5) koordinátájú, szélessége és magassága egyaránt 8. Az eredményként kapott befoglaló téglalap bal alsó csúcsa (2,-2), jobb felső csúcsa (10,13), amely egyébként a második kapott téglalap jobb felső csúcsa is.</p>
+<p>Segítség: a befoglaló téglalap bal alsó csúcsának x-koordinátájának meghatározásához keressük meg a legkisebb értéket a kapott téglalapok bal alsó csúcsának x-koordinátái között, stb.</p>
+<h4 id="b">b</h4>
+<p>Vegyük észre, hogy a <code>Double.max(,)</code> és <code>Double.min(,)</code> függvényekkel kényelmese(bbe)n tudjuk megoldani a fenti feladatot, mint elágazásokkal és &quot;?:&quot;-kifejezésekkel!</p>
+</body>
+</html>
