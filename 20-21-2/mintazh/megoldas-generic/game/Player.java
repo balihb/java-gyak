@@ -1,0 +1,61 @@
+package game;
+
+import game.utils.VehicleException;
+import game.vehicles.Car;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+
+public class Player {
+    private final String name;
+    private final String ip;
+    private int money;
+    private final List<Car> cars = new ArrayList<>();
+
+    public Player(String name, String ip, int money) {
+        if (name != null && ip != null && !ip.isEmpty() && !ip.matches(".*\\s.*") && money > 0) {
+            this.name = name;
+            this.ip = ip;
+            this.money = money;
+        } else {
+            throw new IllegalArgumentException("Nem jo parameterek");
+        }
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == null) return false;
+        if (other == this) return true;
+        if (other instanceof Player otherPlayer) {
+            return otherPlayer.name.equals(name) && otherPlayer.money == money && otherPlayer.cars.equals(cars);
+        }
+
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, money, cars);
+    }
+
+    public void buyCar(Car c) throws VehicleException {
+        if (c.getCost() < money) {
+            c.setOwner(this);
+            cars.add(c);
+            money -= c.getCost();
+        } else {
+            throw new VehicleException("Nem volt eleg a love");
+        }
+    }
+
+    public List<Car> getSortedCars() {
+        //List<Car> carsCopy = new ArrayList<>();
+        //Collections.copy(carsCopy, cars);
+        //List<Car> carsCopy = (List<Car>) ((ArrayList<Car>) cars).clone();
+        List<Car> carsCopy = new ArrayList<>(cars);
+        Collections.sort(carsCopy);
+        return carsCopy;
+    }
+}
